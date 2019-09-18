@@ -1,11 +1,11 @@
 import React from "react";
 import { TodoProvider } from "context/todo";
+import Header from "components/header";
 import List from "components/list";
-import Filter from "components/filter";
 
 export default () => (
   <TodoProvider>
-    <Filter />
+    <Header />
     <List />
   </TodoProvider>
 );
