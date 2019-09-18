@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { TodoContext } from "../context/todo";
+import { useContext } from 'react';
+import { TodoContext } from '../context/todo';
 
 export default () => {
   const [state, setState] = useContext(TodoContext);
@@ -10,8 +10,12 @@ export default () => {
 
   const remove = todo => {};
 
-  const setFilter = name => {
-    setState(state.filter(todo => RegExp(todo.name, 'i').test(name)))
+  const setFilter = filter => {
+    setState(st => ({
+      ...st,
+      todos: st.todos.filter(todo => RegExp(todo.name, 'i').test(filter)),
+      filter
+    }));
   };
 
   return {
@@ -20,6 +24,6 @@ export default () => {
     setFilter,
     remove,
     filter: state.filter,
-    todos: state.todos
+    todos: state.todos,
   };
 };
