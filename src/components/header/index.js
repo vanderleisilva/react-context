@@ -1,5 +1,6 @@
 import React from 'react';
-import Filter from "components/filter";
+import Filter from 'components/filter';
+import Add from 'components/add';
 
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -10,7 +11,13 @@ const useStyles = makeStyles(({ spacing }) => ({
     padding: spacing(1),
     marginBottom: spacing(2),
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+  },
+  actions: {
+    display: 'flex',
+  },
+  add: {
+    marginLeft: spacing(1),
   },
 }));
 
@@ -19,7 +26,10 @@ export default () => {
   return (
     <AppBar position='static' className={classes.appBar}>
       <Typography variant='h6' noWrap children='Todo hooks' />
-      <Filter />
+      <div className={classes.actions}>
+        <Filter />
+        <Add className={classes.add} />
+      </div>
     </AppBar>
   );
 };

@@ -6,7 +6,20 @@ export default () => {
 
   const update = todo => {};
 
-  const add = todo => {};
+  const add = () => {
+    setState(st => ({
+      ...st,
+      todos: [
+        ...st.todos,
+        {
+          id: 4,
+          name: st.filter,
+          done: false,
+        },
+      ],
+      filter: '',
+    }));
+  };
 
   const remove = todo => {};
 
