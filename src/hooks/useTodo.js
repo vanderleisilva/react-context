@@ -10,10 +10,16 @@ export default () => {
 
   const remove = todo => {};
 
+  const setFilter = name => {
+    setState(state.filter(todo => RegExp(todo.name, 'i').test(name)))
+  };
+
   return {
     update,
     add,
+    setFilter,
     remove,
-    todos: state
+    filter: state.filter,
+    todos: state.todos
   };
 };
