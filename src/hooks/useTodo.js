@@ -4,7 +4,12 @@ import { TodoContext } from '../context/todo';
 export default () => {
   const [state, setState] = useContext(TodoContext);
 
-  const update = todo => {};
+  const update = todo => {
+    setState(st => ({
+      ...st,
+      todos: st.todos.map(t => (t.id === todo.id ? todo : t)),
+    }));
+  };
 
   const add = () => {
     setState(st => ({
