@@ -13,8 +13,7 @@ export default () => {
   const setFilter = filter => {
     setState(st => ({
       ...st,
-      todos: st.todos.filter(todo => RegExp(todo.name, 'i').test(filter)),
-      filter
+      filter,
     }));
   };
 
@@ -24,6 +23,8 @@ export default () => {
     setFilter,
     remove,
     filter: state.filter,
-    todos: state.todos,
+    todos: !state.filter
+      ? state.todos
+      : state.todos.filter(t => RegExp(state.filter, 'i').test(t.name)),
   };
 };
