@@ -11,7 +11,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Checkbox from '@material-ui/core/Checkbox';
 
 export default () => {
-  const [{ todos }, dispatch] = useStore();
+  const [{ todos, filter }, dispatch] = useStore();
 
   return (
     <Table>
@@ -22,7 +22,7 @@ export default () => {
         </TableRow>
       </TableHead>
       <TableBody>
-        {todos.map(todo => (
+        {todos.filter(t => RegExp(filter, 'i').test(t.name)).map(todo => (
           <TableRow key={todo.id}>
             <TableCell children={todo.name} />
             <TableCell>
