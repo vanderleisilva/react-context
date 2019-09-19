@@ -9,7 +9,7 @@ import List from "components/list";
 
 export default () => (
   <StoreProvider initialState={initialState} reducer={reducers}>
-    {/* <Header /> */}
+    <Header />
     <List />
   </StoreProvider>
 );

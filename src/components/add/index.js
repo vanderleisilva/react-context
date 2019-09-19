@@ -1,19 +1,22 @@
 import React from 'react';
-// import useTodo from 'hooks/useTodo';
+import { useStore } from 'store';
+import { addTodo, filterTodo } from 'actions';
 
 import Button from '@material-ui/core/Button';
 
 export default props => {
-  // const { filter, add } = useTodo();
+  const [{ filter }, dispatch] = useStore();
 
-  const filter = ''
-  const add = ''
+  const onClick = () => {
+    dispatch(addTodo({ id: 'xx', name: filter, done: false }));
+    dispatch(filterTodo(''));
+  };
 
   return (
     <Button
       {...props}
       variant='contained'
-      onClick={add}
+      onClick={onClick}
       disabled={!filter}
       children='Add'
     />
