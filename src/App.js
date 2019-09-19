@@ -1,11 +1,15 @@
 import React from "react";
-import { TodoProvider } from "context/todo";
+
+import { StoreProvider } from "context";
+import reducers from "reducers"
+import initialState from "store/initialState"
+
 import Header from "components/header";
 import List from "components/list";
 
 export default () => (
-  <TodoProvider>
+  <StoreProvider initialState={initialState} reducer={reducers}>
     <Header />
     <List />
-  </TodoProvider>
+  </StoreProvider>
 );
