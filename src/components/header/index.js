@@ -7,6 +7,11 @@ import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(({ spacing }) => ({
+  '@global': {
+    body: {
+      margin: 0,
+    },
+  },
   appBar: {
     padding: spacing(1),
     marginBottom: spacing(2),
