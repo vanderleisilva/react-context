@@ -1,6 +1,6 @@
 import { fade } from '@material-ui/core/styles';
 
-export default ({ spacing, breakpoints, shape, palette, transitions }) => ({
+export default ({ spacing, shape, palette, transitions }) => ({
   search: {
     position: 'relative',
     borderRadius: shape.borderRadius,

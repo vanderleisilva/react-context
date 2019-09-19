@@ -1,4 +1,6 @@
 export default {
+  state: true,
+  filter: '',
   todos: [
     {
       id: 1,
@@ -16,6 +18,4 @@ export default {
       done: false,
     },
   ],
-  filter: '',
-  update: {},
 };

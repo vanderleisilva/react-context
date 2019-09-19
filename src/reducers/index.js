@@ -11,4 +11,5 @@ export default createReducer({
   [types.REMOVE_TODO]: todo.remove,
   [types.UPDATE_TODO]: todo.update,
   [types.FILTER_TODO]: todo.filter,
+  [types.SHOW_STATE]: todo.showState,
 });

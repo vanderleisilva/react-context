@@ -17,3 +17,8 @@ export const filter = (state, { payload }) => ({
   ...state,
   filter: payload.filter
 });
+
+export const showState = (state, { payload }) => ({
+  ...state,
+  state: payload.state
+});
