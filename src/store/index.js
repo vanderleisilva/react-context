@@ -9,4 +9,4 @@ export const StoreProvider = ({ reducer, initialState, children }) => (
   />
 );
 
-export const useStore = () => useContext(StoreProvider);
+export const useStore = () => useContext(StateContext);

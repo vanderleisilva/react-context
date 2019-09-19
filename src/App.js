@@ -1,6 +1,6 @@
 import React from "react";
 
-import { StoreProvider } from "context";
+import { StoreProvider } from "store";
 import reducers from "reducers"
 import initialState from "store/initialState"
 
@@ -9,7 +9,7 @@ import List from "components/list";
 
 export default () => (
   <StoreProvider initialState={initialState} reducer={reducers}>
-    <Header />
+    {/* <Header /> */}
     <List />
   </StoreProvider>
 );
