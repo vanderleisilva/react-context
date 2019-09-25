@@ -1,12 +1,15 @@
 import * as todo from './todo';
 import * as types from 'actions/types';
+import applyMiddlewares from 'middlewares';
 
 const createReducer = handlers => (state, action) => {
   if (!handlers.hasOwnProperty(action.type)) {
     return state;
   }
 
-  return handlers[action.type](state, action);
+  let newState = applyMiddlewares(state, action);
+
+  return handlers[action.type](newState, action);
 };
 
 export default createReducer({
