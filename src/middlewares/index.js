@@ -1,9 +1,10 @@
 import log from './log';
+import store from './store';
 
-const chain = [log];
+const middlewares = [store, log];
 
 export default ({ state, action, next }) => {
-  chain.push(next);
+  const chain = [...middlewares, next]
 
   return chain.reduce(
     (state, fn, index) => fn(state, action, chain[index + 1]),
