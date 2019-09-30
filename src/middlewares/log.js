@@ -1,7 +1,13 @@
-export default (state, action, next) => {
+const initial = (state, action) => {
   console.log(action);
-  console.log('current state', state);
-  console.log('next state', next(state, action));
-  console.log('---------');
+  console.log(state);
   return state;
 };
+
+const final = state => {
+  console.log(state);
+  console.log('-------------------');
+  return state;
+};
+
+export { initial, final };

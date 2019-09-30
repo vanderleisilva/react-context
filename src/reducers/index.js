@@ -10,7 +10,7 @@ const createReducer = handlers => (state, action) => {
   return applyMiddlewares({
     state,
     action,
-    next: handlers[action.type],
+    handler: handlers[action.type],
   });
 };
 

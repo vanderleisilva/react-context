@@ -1,13 +1,8 @@
-import log from './log';
+import { initial, final } from './log';
 import localStorage from './localStorage';
 
-const middlewares = [localStorage, log];
+export default ({ state, action, handler }) => {
+  const chain = [initial, handler, localStorage, final];
 
-export default ({ state, action, next }) => {
-  const chain = [...middlewares, next];
-
-  return chain.reduce(
-    (state, fn, index) => fn(state, action, chain[index + 1]),
-    state
-  );
+  return chain.reduce((st, fn) => fn(st, action), state);
 };
