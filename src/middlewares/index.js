@@ -1,6 +1,12 @@
 import log from './log';
 
-export default (state, action) => {
-  const middlewares = [log];
-  return middlewares.reduce((state, m) => m({ state, action }), state);
+const chain = [log];
+
+export default ({ state, action, next }) => {
+  chain.push(next);
+
+  return chain.reduce(
+    (state, fn, index) => fn(state, action, chain[index + 1]),
+    state
+  );
 };

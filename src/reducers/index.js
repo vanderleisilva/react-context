@@ -7,9 +7,11 @@ const createReducer = handlers => (state, action) => {
     return state;
   }
 
-  let newState = applyMiddlewares(state, action);
-
-  return handlers[action.type](newState, action);
+  return applyMiddlewares({
+    state,
+    action,
+    next: handlers[action.type],
+  });
 };
 
 export default createReducer({
