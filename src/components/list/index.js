@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useStore } from 'store';
-import { udpateTodo } from 'actions';
+import { updateTodo } from 'actions';
 
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -29,7 +29,7 @@ export default () => {
               <Checkbox
                 checked={todo.done}
                 onChange={() =>
-                  dispatch(udpateTodo({ ...todo, done: !todo.done }))
+                  dispatch(updateTodo({ ...todo, done: !todo.done }))
                 }
               />
             </TableCell>
