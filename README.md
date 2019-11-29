@@ -10,4 +10,4 @@ The idea here is to showcase a basic todo list implementation having a central s
 
 ### `further reading`
 
-[Check here](https://dev.to/vanderleisilva/global-state-management-with-react-hooks-and-context-1831-temp-slug-5754018?preview=abbcc7150b27c00639c6d64e60e0f46a13c70a95bc2606631de6efae6031ca376db9ba5596f1429586619a0eca8ccb9424ce5cb8cff708531a0d1c53) the article about the project elaboration, decisions made, reasons and further considerations.
+[Check here](https://dev.to/vanderleisilva/global-state-management-with-react-hooks-and-context-5f6h) the article about the project elaboration, decisions made, reasons and further considerations.
