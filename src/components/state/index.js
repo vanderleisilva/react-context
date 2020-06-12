@@ -18,7 +18,7 @@ const useStyles = makeStyles(({ spacing }) => ({
   },
 }));
 
-export default () => {
+const State = () => {
   const [state, dispatch] = useStore();
   const classes = useStyles();
 
@@ -42,3 +42,5 @@ export default () => {
     </Card>
   );
 };
+
+export default State;

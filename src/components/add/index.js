@@ -7,7 +7,7 @@ import uuid from 'uuid/v1';
 
 import Button from '@material-ui/core/Button';
 
-export default props => {
+const Add = props => {
   const [{ filter }, dispatch] = useStore();
 
   const onClick = () => {
@@ -25,3 +25,5 @@ export default props => {
     />
   );
 };
+
+export default Add;

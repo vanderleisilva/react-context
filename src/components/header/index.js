@@ -26,7 +26,7 @@ const useStyles = makeStyles(({ spacing }) => ({
   },
 }));
 
-export default () => {
+const Header = () => {
   const classes = useStyles();
   return (
     <AppBar position='static' className={classes.appBar}>
@@ -38,3 +38,5 @@ export default () => {
     </AppBar>
   );
 };
+
+export default Header;
